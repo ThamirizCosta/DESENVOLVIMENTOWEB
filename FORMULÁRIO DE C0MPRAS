@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário de Compra</title>
+	<script type="text/javascript" src="validacao.js">
+
+function validarCompra() {
+        var numPedido = document.forms["formCompra"]["numPedido"].value;
+        var nomeCliente = document.forms["formCompra"]["nomeCliente"].value;
+        var dataCompra = document.forms["formCompra"]["dataCompra"].value;
+        var itemEscolhido = document.forms["formCompra"]["itemEscolhido"].value;
+        var quantidade = document.forms["formCompra"]["quantidade"].value;
+        var valorItem = document.forms["formCompra"]["valorItem"].value;
+    
+        // Validação do Número do Pedido
+        if (numPedido == "") {
+            alert("Número do Pedido deve ser preenchido");
+            return false;
+        }
+    
+        // Validação do Nome do Cliente
+        if (nomeCliente == "") {
+            alert("Nome do Cliente deve ser preenchido");
+            return false;
+        }
+    
+        // Validação da Data da Compra
+        if (dataCompra == "") {
+            alert("Data da Compra deve ser preenchida");
+            return false;
+        }
+    
+        // Validação do Item Escolhido
+        if (itemEscolhido == "") {
+            alert("Item Escolhido deve ser preenchido");
+            return false;
+        }
+
+    </script>
+</head>
+<body>
+	<h1>Formulário de Compra</h1>
+	<form name="formCompra" onsubmit="return validarCompra()" action="#" method="post">
+		<label for="numPedido">Número do Pedido:</label>
+		<input type="text" id="numPedido" name="numPedido"><br>
+
+		<label for="nomeCliente">Nome do Cliente:</label>
+		<input type="text" id="nomeCliente" name="nomeCliente"><br>
+
+		<label for="dataCompra">Data da Compra:</label>
+		<input type="date" id="dataCompra" name="dataCompra"><br>
+
+		<label for="itemEscolhido">Item Escolhido:</label>
+		<input type="text" id="itemEscolhido" name="itemEscolhido"><br>
+
+		<label for="quantidade">Quantidade:</label>
+		<input type="number" id="quantidade" name="quantidade"><br>
+
+		<label for="valorItem">Valor do Item:</label>
+		<input type="text" id="valorItem" name="valorItem"><br>
+
+		<input type="submit" value="Comprar">
+	</form>
+</body>
+</html>
